@@ -3,23 +3,27 @@
 @section('titulo', 'Lista de productos')
 
 @section('contenido')
+    @include('tienda.secciones.slider')
+    <section id="demo">
+        @foreach($productos as $producto)
 
-    <h1>Listado de productos</h1>
+            <article class="white-panel"> <img class="imgcard"  src="{{url('img/'.$producto->imagen)}}" alt="ALT">
+                <h1><a href="#">{{$producto->nombre}}</a></h1>
+                <p>{{$producto->descripcion}}</p>
+                <div class="card-footer" style="background: inherit; border-color: inherit;">
+                    <button type="button" class="btn btn-primary" onclick="location.href='{{route('carrito-agregar',$producto->idproducto)}}'"><i class="fas fa-cart-plus"></i></button>
+                    <button type="button" class="btn btn-outline-primary"  onclick="location.href='{{route('producto-detalle', [$producto->idproducto])}}'" href="{{route('producto-detalle', [$producto->idproducto])}}">Ver más <i class="fas fa-arrow-right"></i></button>
+                </div>
 
-    @foreach($productos as $producto)
+            </article>
 
-        <h2>{{$producto->nombre}}</h2>
-        <p><img src="{{url('img/'.$producto->imagen)}}" width="180" alt=""></p>
-        <h3>Precio: {{$producto->precio}}</h3>
-        <p>{{$producto->descripcion}}</p>
-        <p>
-            <a href="">Agregar al carrito</a>
-            <a href="{{route('producto-detalle', [$producto->idproducto])}}">Ver más</a>
-
-        </p>
-        <hr>
-    @endforeach
-
+        @endforeach
+    </section>
 
 
 @endsection
+
+
+
+
+
