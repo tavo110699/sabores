@@ -2,6 +2,10 @@
 @section('titulo','Carrito de Productos')
 
 @section('contenido')
+@php
+    $total = 0;
+@endphp
+
 <div class="container text-center">
     @if(count($carrito))
     <div class="table-responsive">
@@ -24,14 +28,29 @@
 
         <td>{{$item->nombre}}</td>
         <td>{{$item->precio}}</td>
-        <td>{{$item->cantidad}}</td>
+        <td>
+            <input type="number" min="1" max="50" value="{{$item->cantidad}}" id="producto_{{$item->idproducto}}">
+            <a href="#" class="btn btn-warning btn-update-item"
+                data-href="{{route('carrito-actualizar', $item->idproducto)}}"
+                data-id="{{$item->idproducto}}"><i class="fas fa-redo"></i></a>
+        </td>
         <td>{{$item->precio * $item->cantidad}}</td>
         <td><a href="{{route('carrito-borrar',$item->idproducto)}}" class="btn btn-danger"><i class="far fa-trash-alt"></i> </a> </td>
     </tr>
+
+    @php
+        $total = $total + ($item->precio * $item->cantidad);
+    @endphp
+
     @endforeach
 
     </tbody>
 </table>
+            <h3>
+                @php
+                    echo 'Monto total: '. $total;
+                @endphp
+            </h3>
         </div>
     </div>
     @else

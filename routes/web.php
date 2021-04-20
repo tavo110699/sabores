@@ -48,3 +48,11 @@ Route::get('carrito/borrar/{producto}', [
     'as' => 'carrito-borrar',
     'uses' => 'CarritoController@delete'
 ]);
+
+Route::get('carrito/actualizar/{producto}/{cantidad?}', [
+    'as' => 'carrito-actualizar',
+    'uses' => 'CarritoController@update'
+]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

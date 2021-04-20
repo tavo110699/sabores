@@ -43,4 +43,11 @@ class CarritoController extends Controller
         \Session::put('carrito',$carrito);
         return redirect()->route('carrito');
     }
+
+    public function update(Producto $producto,$cantidad){
+        $carrito = \Session::get('carrito');
+        $carrito[$producto->idproducto]->cantidad = $cantidad;
+        \Session::put('carrito',$carrito);
+        return redirect()->route('carrito');
+    }
 }
