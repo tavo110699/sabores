@@ -53,6 +53,22 @@ Route::get('carrito/actualizar/{producto}/{cantidad?}', [
     'as' => 'carrito-actualizar',
     'uses' => 'CarritoController@update'
 ]);
+
+Route::get('orden-detalles', [
+    'as' => 'orden-detalles',
+    'uses' => 'CarritoController@ordenDetalles'
+])->middleware('auth');
+
+Route::get('payment',array(
+    'as' => 'payment',
+    'uses' => 'PaypalController@portPayment',
+));
+
+Route::get('payment/status',array(
+    'as' => 'payment.status',
+    'uses' => 'PaypalController@getPaymentStatus',
+));
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -11,6 +11,10 @@
 </head>
 <body>
 
+@if(\Session::has('mensaje'))
+    @include( 'tienda.secciones.mensajes')
+@endif
+
     @include('tienda.secciones.menu')
     @yield('contenido')
     @include('tienda.secciones.footer')

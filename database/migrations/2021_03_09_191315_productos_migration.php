@@ -13,6 +13,9 @@ class ProductosMigration extends Migration
      */
     public function up()
     {
+        //omite la tabla si existe en la base de datos
+        if(Schema::hasTable('productos')) return;
+
         Schema::create('productos', function (Blueprint $table) {
             $table->bigIncrements('idproducto');
             $table->string('nombre', 45);

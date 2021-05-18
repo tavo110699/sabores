@@ -56,5 +56,7 @@
     @else
     <h1>No hay productos en el carrito de compras</h1>
     @endif
+        <a href="{{route('inicio')}}" class="btn btn-primary">Seguir comprando</a>
+        <a href="{{route('orden-detalles')}}" class="btn btn-primary">Continuar</a>
 </div>
 @endsection

@@ -32,7 +32,7 @@ class CarritoController extends Controller
         //El id del producto sera el indice del arreglo carrito
         $carrito[$producto->idproducto]=$producto;
         \Session::put('carrito',$carrito);
-        return \Session::get('carrito');
+         return view('tienda.secciones.carrito', compact('carrito'));
     }
 
     public function delete(Producto $producto){
@@ -49,5 +49,22 @@ class CarritoController extends Controller
         $carrito[$producto->idproducto]->cantidad = $cantidad;
         \Session::put('carrito',$carrito);
         return redirect()->route('carrito');
+    }
+    public function total(){
+    $carrito = \Session::get('carrito');
+    $total = 0;
+    foreach ($carrito as $item){
+        $total += $item -> precio * $item -> cantidad;
+    }
+    return $total;
+    }
+
+    public function ordenDetalles(){
+    if (count(\Session::get('carrito'))<=0)
+        return redirect()->route('inicio');
+    $carrito = \Session::get('carrito');
+    $total = $this->total();
+
+    return view('tienda.orden-detalles', compact('carrito', $total));
     }
 }

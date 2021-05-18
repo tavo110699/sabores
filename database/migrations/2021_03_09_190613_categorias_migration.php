@@ -13,6 +13,9 @@ class CategoriasMigration extends Migration
      */
     public function up()
     {
+        //omite la tabla si existe en la base de datos
+        if(Schema::hasTable('categorias')) return;
+
         Schema::create('categorias', function (Blueprint $table) {
             $table->bigIncrements('idcategoria');
             $table->string('nombre', 45);

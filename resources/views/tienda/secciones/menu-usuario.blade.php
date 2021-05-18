@@ -3,8 +3,8 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}} <i class="fas fa-user"></i></a>
     <div class="dropdown-menu">
         <a class="dropdown-item" href="#">Acceso</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" href="#">Editar datos</a>
+        <a class="dropdown-item" href="#">Metodos de pagos</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="{{url('/logout')}}"
         onclick="event.preventDefault();
