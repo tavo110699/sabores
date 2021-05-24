@@ -1,0 +1,23 @@
+body {
+    background: #dbe7fd;
+}
+
+.contenidos{
+    background: #fff;
+    border-radius: 1em;
+    margin: 1em;
+    min-height: 500px;
+    padding: 1em;
+}
+
+.panel{
+    background: #d9eeff;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+.panel .icon-home{
+
+    font-size: 60px;
+    margin: 20px;
+}

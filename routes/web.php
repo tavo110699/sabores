@@ -59,6 +59,7 @@ Route::get('orden-detalles', [
     'uses' => 'CarritoController@ordenDetalles'
 ])->middleware('auth');
 
+//utas paypal
 Route::get('payment',array(
     'as' => 'payment',
     'uses' => 'PaypalController@portPayment',
@@ -69,6 +70,16 @@ Route::get('payment/status',array(
     'uses' => 'PaypalController@getPaymentStatus',
 ));
 
+//rutas para login
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//rutas para panel admin
+Route::resource('categorias', 'Admin\CategoriasController');
+
+
+//ruta para visita de home back
+Route::get('back', function (){
+    return view('admin.home');
+})->middleware('auth');

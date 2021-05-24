@@ -38,7 +38,7 @@
                         <td>{{$item->precio * $item->cantidad}}</td>
 
                         @php
-                            $total = $total + $item->precio;
+                            $total = $total + ($item->precio*$item->cantidad);
                         @endphp
 
                     </tr>
