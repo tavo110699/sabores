@@ -8,16 +8,16 @@
     <div class="collapse navbar-collapse" id="navbarColor03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Categorias</a>
+                <a class="nav-link" href="{{route('categorias.index')}}">Categorias</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Productos</a>
+                <a class="nav-link" href="{{route('productos.index')}}">Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pedidos</a>
+                <a class="nav-link" href="{{route('pedidos.index')}}">Pedidos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Usuarios</a>
+                <a class="nav-link" href="{{route('user.index')}}">Usuarios</a>
             </li>
 
             <li class="nav-item dropdown ">

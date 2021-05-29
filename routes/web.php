@@ -77,6 +77,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //rutas para panel admin
 Route::resource('categorias', 'Admin\CategoriasController');
+Route::resource('productos', 'Admin\ProductoController');
+Route::resource('user', 'Admin\UsuariosController');
+Route::resource('pedidos', 'Admin\PedidoController');
+Route::bind('categorias', function ($idcategoria){
+    return App\Categoria::where('idcategoria',$idcategoria)->first();
+});
+
+Route::bind('productos',function ($idproducto){
+    return App\Producto::where('idproducto',$idproducto)->first();
+});
 
 
 //ruta para visita de home back

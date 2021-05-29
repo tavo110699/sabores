@@ -22,4 +22,7 @@ class OrderItem extends Model
         return $this -> belongsTo('App\Producto');
     }
 
+    public function producto(){
+        return $this->belongsTo('App\Producto', 'idproducto','idproducto');
+    }
 }

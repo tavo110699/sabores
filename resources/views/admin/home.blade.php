@@ -17,7 +17,7 @@
             <div class="col-md-6">
                 <div class="panel">
                     <i class="fas fa-boxes icon-home"></i>
-                    <a href="" class="btn btn-warning btn-block btn-home-admin">Productos</a>
+                    <a href="{{route('productos.index')}}" class="btn btn-warning btn-block btn-home-admin">Productos</a>
                 </div>
         </div>
     </div>
@@ -26,13 +26,13 @@
         <div class="col-md-6">
             <div class="panel">
                 <i class="fas fa-truck-loading icon-home"></i>
-                <a href="" class="btn btn-warning btn-block btn-home-admin">Pedidos</a>
+                <a href="{{route('pedidos.index')}}" class="btn btn-warning btn-block btn-home-admin">Pedidos</a>
             </div>
         </div>
         <div class="col-md-6">
             <div class="panel">
                 <i class="fas fa-users icon-home"></i>
-                <a href="" class="btn btn-warning btn-block btn-home-admin">Usuarios</a>
+                <a href="{{route('user.index')}}" class="btn btn-warning btn-block btn-home-admin">Usuarios</a>
             </div>
         </div>
     </div>
